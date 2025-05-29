@@ -42,8 +42,8 @@ use PHPMailer\PHPMailer\Exception;
 			        $mail->isSMTP();                                     
 			        $mail->Host = 'smtp.gmail.com';                      
 			        $mail->SMTPAuth = true;                               
-			        $mail->Username = '';     
-			        $mail->Password = '';                    
+			        $mail->Username = 'bichngoc141205@gmail.com';     
+			        $mail->Password = 'dlxz eaxv wzif hpki';                    
 			        $mail->SMTPOptions = array(
 			            'ssl' => array(
 			            'verify_peer' => false,
