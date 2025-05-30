@@ -1,43 +1,35 @@
-<header class="main-header">
-  <!-- Logo -->
-  <a href="#" class="logo">
-    <!-- mini logo for sidebar mini 50x50 pixels -->
-    <span class="logo-mini"><b>S</b>CS</span>
-    <!-- logo for regular state and mobile devices -->
-    <span class="logo-lg"><b>Source</b>CodeSter</span>
-  </a>
-  <!-- Header Navbar: style can be found in header.less -->
-  <nav class="navbar navbar-static-top">
-    <!-- Sidebar toggle button-->
-    <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
-      <span class="sr-only">Toggle navigation</span>
+<header class="bg-dark text-white">
+  <nav class="navbar navbar-expand-lg navbar-dark container-fluid">
+    <!-- Logo -->
+    <a class="navbar-brand" href="#">
+      <strong>CeramC</strong>
     </a>
 
-    <div class="navbar-custom-menu">
-      <ul class="nav navbar-nav">
-        <!-- User Account: style can be found in dropdown.less -->
-        <li class="dropdown user user-menu">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-            <img src="<?php echo (!empty($admin['photo'])) ? '../images/'.$admin['photo'] : '../images/profile.jpg'; ?>" class="user-image" alt="User Image">
-            <span class="hidden-xs"><?php echo $admin['firstname'].' '.$admin['lastname']; ?></span>
-          </a>
-          <ul class="dropdown-menu">
-            <!-- User image -->
-            <li class="user-header">
-              <img src="<?php echo (!empty($admin['photo'])) ? '../images/'.$admin['photo'] : '../images/profile.jpg'; ?>" class="img-circle" alt="User Image">
+    <!-- Toggler for responsive navbar -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarAdmin" aria-controls="navbarAdmin" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-              <p>
-                <?php echo $admin['firstname'].' '.$admin['lastname']; ?>
-                <small>Member since <?php echo date('M. Y', strtotime($admin['created_on'])); ?></small>
-              </p>
+    <!-- Navbar content -->
+    <div class="collapse navbar-collapse justify-content-end" id="navbarAdmin">
+      <ul class="navbar-nav">
+        <!-- User Dropdown -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="<?php echo (!empty($admin['photo'])) ? '../images/'.$admin['photo'] : '../images/profile.jpg'; ?>" class="rounded-circle me-2" width="32" height="32" alt="User">
+            <span><?php echo $admin['firstname'].' '.$admin['lastname']; ?></span>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+            <li class="text-center p-3">
+              <img src="<?php echo (!empty($admin['photo'])) ? '../images/'.$admin['photo'] : '../images/profile.jpg'; ?>" class="rounded-circle mb-2" width="64" height="64" alt="User">
+              <p class="mb-0"><?php echo $admin['firstname'].' '.$admin['lastname']; ?></p>
             </li>
-            <li class="user-footer">
-              <div class="pull-left">
-                <a href="#profile" data-toggle="modal" class="btn btn-default btn-flat" id="admin_profile">Update</a>
-              </div>
-              <div class="pull-right">
-                <a href="../logout.php" class="btn btn-default btn-flat">Sign out</a>
-              </div>
+            <li><hr class="dropdown-divider"></li>
+            <li>
+              <a class="dropdown-item" href="#profile" data-bs-toggle="modal" id="admin_profile">Cập nhật</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="../logout.php">Đăng xuất</a>
             </li>
           </ul>
         </li>
@@ -45,4 +37,6 @@
     </div>
   </nav>
 </header>
+
+<!-- Modal Profile (bắt buộc phải có modal Bootstrap) -->
 <?php include 'includes/profile_modal.php'; ?>
