@@ -1,37 +1,56 @@
-<aside class="main-sidebar">
-  <!-- sidebar: style can be found in sidebar.less -->
-  <section class="sidebar">
-    <!-- Sidebar user panel -->
-    <div class="user-panel">
-      <div class="pull-left image">
-        <img src="<?php echo (!empty($admin['photo'])) ? '../images/'.$admin['photo'] : '../images/profile.jpg'; ?>" class="img-circle" alt="User Image">
-      </div>
-      <div class="pull-left info">
-        <p><?php echo $admin['firstname'].' '.$admin['lastname']; ?></p>
-        <a><i class="fa fa-circle text-success"></i> Online</a>
-      </div>
+<aside class="bg-dark text-white vh-100 p-3" style="width: 250px;">
+  <!-- Sidebar user panel -->
+  <div class="d-flex align-items-center mb-4">
+    <img src="<?php echo (!empty($admin['photo'])) ? '../images/'.$admin['photo'] : '../images/profile.jpg'; ?>" class="rounded-circle me-2" alt="User Image" width="40" height="40">
+    <div>
+      <p class="mb-0"><?php echo $admin['firstname'].' '.$admin['lastname']; ?></p>
+      <small><i class="fa-solid fa-circle text-success"></i> Online</small>
     </div>
-    <!-- sidebar menu: : style can be found in sidebar.less -->
-    <ul class="sidebar-menu" data-widget="tree">
-      <li class="header">REPORTS</li>
-      <li><a href="home.php"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
-      <li><a href="sales.php"><i class="fa fa-money"></i> <span>Sales</span></a></li>
-      <li class="header">MANAGE</li>
-      <li><a href="users.php"><i class="fa fa-users"></i> <span>Users</span></a></li>
-      <li class="treeview">
-        <a href="#">
-          <i class="fa fa-barcode"></i>
-          <span>Products</span>
-          <span class="pull-right-container">
-            <i class="fa fa-angle-left pull-right"></i>
-          </span>
-        </a>
-        <ul class="treeview-menu">
-          <li><a href="products.php"><i class="fa fa-circle-o"></i> Product List</a></li>
-          <li><a href="category.php"><i class="fa fa-circle-o"></i> Category</a></li>
+  </div>
+
+  <!-- Sidebar Menu -->
+  <h6 class="text-uppercase fw-bold text-muted">Reports</h6>
+  <ul class="nav flex-column mb-3">
+    <li class="nav-item">
+      <a href="home.php" class="nav-link text-white">
+        <i class="fa-solid fa-gauge me-2"></i> Dashboard
+      </a>
+    </li>
+    <li class="nav-item">
+      <a href="sales.php" class="nav-link text-white">
+        <i class="fa-solid fa-money-bill-wave me-2"></i> Sales
+      </a>
+    </li>
+  </ul>
+
+  <h6 class="text-uppercase fw-bold text-muted">Manage</h6>
+  <ul class="nav flex-column">
+    <li class="nav-item">
+      <a href="users.php" class="nav-link text-white">
+        <i class="fa-solid fa-users me-2"></i> Users
+      </a>
+    </li>
+
+    <!-- Dropdown for Products -->
+    <li class="nav-item">
+      <a class="nav-link text-white d-flex justify-content-between align-items-center" data-bs-toggle="collapse" href="#productMenu" role="button" aria-expanded="false" aria-controls="productMenu">
+        <span><i class="fa-solid fa-barcode me-2"></i> Products</span>
+        <i class="fa-solid fa-angle-down"></i>
+      </a>
+      <div class="collapse" id="productMenu">
+        <ul class="nav flex-column ms-3 mt-2">
+          <li class="nav-item">
+            <a href="products.php" class="nav-link text-white">
+              <i class="fa-solid fa-box-open me-2"></i> Product List
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="category.php" class="nav-link text-white">
+              <i class="fa-solid fa-layer-group me-2"></i> Category
+            </a>
+          </li>
         </ul>
-      </li>
-    </ul>
-  </section>
-  <!-- /.sidebar -->
+      </div>
+    </li>
+  </ul>
 </aside>
